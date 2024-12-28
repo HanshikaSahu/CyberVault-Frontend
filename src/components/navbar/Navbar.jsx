@@ -18,12 +18,14 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>
-        <img src={Logo} alt="logo" className={styles.logoImage} />
+      <div className={styles.navContent}>
+        <div className={styles.logo}>
+          <img src={Logo} alt="logo" className={styles.logoImage} />
+        </div>
+        <NavList />
+        <LoginButton authStatus={authStatus} />
+        <Hamburger authStatus={authStatus} />
       </div>
-      <NavList />
-      <LoginButton authStatus={authStatus} />
-      <Hamburger authStatus={authStatus} />
     </nav>
   )
 }
