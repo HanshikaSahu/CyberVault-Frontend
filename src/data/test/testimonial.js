@@ -30,6 +30,8 @@ const testimonials = [
         text: "Exceeded my expectations in every way.",
         author: "Alice Brown"
     }
+    
 ];
 
 export default testimonials;
+
