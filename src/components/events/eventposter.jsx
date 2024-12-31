@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './eventposter.css';
+import cybervault from '../../assets/images/cybervault.png';
+import cybervault2 from '../../assets/images/cybervault2.png';
 
 
 // Mock fetchLiveEvent function to simulate fetching data
@@ -34,8 +36,9 @@ const LiveEventComponent = () => {
         <div className="eventContainer">
           <div className="liveBox">LIVE</div>
           <p className="eventText">Events</p>
-          <img src="/assets/images/cybervault2.png" alt="" className="image2" />
-          <img src="/assets/images/cybervault.png" alt="" className="image1" />
+          <img src={cybervault2} alt="" className="image2" />
+          <img src={cybervault} alt="" className="image1" />
+          
         </div>
       );
   }
