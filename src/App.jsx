@@ -1,12 +1,12 @@
-import events from './components./events';
+import React from 'react';
+import LiveEventComponent from './components/events'; 
 
 function App() {
-
   return (
-    <>
-     <events />
-    </>
-  )
+    <div>
+      <LiveEventComponent />
+    </div>
+  );
 }
 
-export default App
+export default App;

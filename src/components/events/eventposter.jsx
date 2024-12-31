@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import './eventposter.css';
+
 
 // Mock fetchLiveEvent function to simulate fetching data
 // Replace this with your actual API function from './services/api'

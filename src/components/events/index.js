@@ -1,2 +1,3 @@
-const {eventPoster}= require('./eventposter.jsx');
-module.exports = {eventPoster}
+import LiveEventComponent from './eventposter';
+
+export default LiveEventComponent;
