@@ -37,6 +37,7 @@
   position: absolute;
   bottom: 0px;
   right: 150px;
+  z-index: 1;
 }
 .image1{
   width: 346px;
@@ -45,6 +46,7 @@
   right: 0px;
   bottom: 0px;
   border-bottom-right-radius: 50px;
+  z-index: 2;
 }
 @media (max-width: 1199px) {
   .eventContainer {
