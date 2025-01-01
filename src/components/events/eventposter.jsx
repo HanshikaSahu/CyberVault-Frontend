@@ -1,63 +1,41 @@
 import React, { useEffect, useState } from 'react';
-import './eventposter.css';
-import cybervault from '../../assets/images/cybervault.png';
-import cybervault2 from '../../assets/images/cybervault2.png';
+  import './eventposter.css';
+  import eventFallbackData from '../../data/event/liveEvent.json'
 
+  const LiveEventComponent = () => {
+    const [eventData, setEventData] = useState(null);
 
-// Mock fetchLiveEvent function to simulate fetching data
-// Replace this with your actual API function from './services/api'
-const fetchLiveEvent = async () => {
-  const response = await fetch('/assets/data/liveEvent.json');
-  if (!response.ok) {
-    throw new Error('Failed to fetch event data');
-  }
-  return await response.json();
-};
+    useEffect(() => {
+      const getEventData = async () => {
+        try {
+          const response = await fetch('/api/form/getLiveForm');
+          const formData = await response.json(); 
+          setEventData(formData.data.info.eventPoster);
+        } catch (err) {
+          console.log('Entering catch block',eventFallbackData.info.eventPoster);
+          setEventData(eventFallbackData.info.eventPoster);
 
-const LiveEventComponent = () => {
-  const [eventData, setEventData] = useState(null);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    const getEventData = async () => {
-      try {
-        const data = await fetchLiveEvent();
-        setEventData(data);
-      } catch (err) {
-        setError(true);
-      }
-    };
-
-    getEventData();
-  }, []);
-
-  if (error) {
-    return (
-        <div className="eventContainer">
-          <div className="liveBox">LIVE</div>
-          <p className="eventText">Events</p>
-          <img src={cybervault2} alt="" className="image2" />
-          <img src={cybervault} alt="" className="image1" />
+          console.log("printing event data inside catch",eventData.image1);
           
-        </div>
-      );
-  }
+        }
+      };
 
-  if (!eventData) {
-    return <p>Loading...</p>; // Optional loading state
-  }
+      getEventData();
+    }, []);
 
-  return (
-    <div className="eventContainer">
-      <h1>{eventData.eventName}</h1>
-      <p>{eventData.description}</p>
-      <img
-        src={`/assets/images/${eventData.poster}`} // Assuming the poster image is stored in the assets/images folder
-        alt={eventData.eventName}
-        style={{ maxWidth: '100%', borderRadius: '20px' }}
-      />
-    </div>
-  );
-};
+    if (!eventData) {
+      return <p>Loading...</p>;
+    }
 
-export default LiveEventComponent;
+    return (
+
+      <div className="eventContainer">
+        <div className="liveBox">LIVE</div>
+        <p className="eventText">Events</p>
+        <img src={eventData.image2} alt="Event Image 2" className="image2" />
+        <img src={eventData.image1} alt="Event Image 1" className="image1" />
+      </div>
+    );
+  };
+
+  export default LiveEventComponent;
