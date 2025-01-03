@@ -5,6 +5,7 @@ import LoginButton from './LoginButton'
 import NavList from './NavList'
 import Hamburger from './Hamburger'
 
+// Check comment
 const Navbar = () => {
   // Check if the user is authenticated or not assuming that the data or token is in the local storage to show the correct button
   const [authStatus, setAuthStatus] = useState('Login')
