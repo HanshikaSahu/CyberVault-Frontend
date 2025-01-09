@@ -3,9 +3,10 @@ import Navbar from './components/navbar/Navbar.jsx';
 import Sponsors from "./components/sponsors/Sponsors";
 import LiveEventComponent from './components/events'; 
 import TestimonialSection from "./components/Testimonials/TestimonialSection";
-import Hero from "./components/Hero/Hero";
+import Hero from "./components/Hero/Hero"
 import NotFound from "./components/NotFound/notFound";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import About from './components/About/about.jsx';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <div>
             <Navbar />
             <Hero />
+            <About />
             <Sponsors />
             <LiveEventComponent />
             <TestimonialSection />
