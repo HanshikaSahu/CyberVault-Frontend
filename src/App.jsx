@@ -1,16 +1,17 @@
-import Sponsors from "./components/sponsors/sponsors"
+import React from 'react';
+import LiveEventComponent from './components/events'; 
+import Sponsors from "./components/sponsors/Sponsors"
 
 import TestimonialSection from "./components/Testimonials/TestimonialSection"
 
 function App() {
-
   return (
-    <>
-     <h1>CyberVault Frontend</h1>
-     <Sponsors/>
+    <div>
+      <Sponsors/>
+      <LiveEventComponent />
      <TestimonialSection/>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
