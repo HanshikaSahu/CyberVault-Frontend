@@ -1,15 +1,16 @@
 import React from 'react';
-import LiveEventComponent from './components/events'; 
+import Navbar from './components/navbar/Navbar.jsx'
 import Sponsors from "./components/sponsors/Sponsors"
-
+import LiveEventComponent from './components/events'; 
 import TestimonialSection from "./components/Testimonials/TestimonialSection"
 
 function App() {
   return (
     <div>
-      <Sponsors/>
+       <Navbar />
+      <Sponsors />
       <LiveEventComponent />
-     <TestimonialSection/>
+     <TestimonialSection />
     </div>
   );
 }
