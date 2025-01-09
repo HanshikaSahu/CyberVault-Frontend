@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './components/navbar/Navbar.jsx';
+import Footer from './components/Footer';
 import Sponsors from "./components/sponsors/Sponsors";
 import LiveEventComponent from './components/events'; 
 import TestimonialSection from "./components/Testimonials/TestimonialSection";
@@ -20,6 +21,7 @@ function App() {
             <Sponsors />
             <LiveEventComponent />
             <TestimonialSection />
+            <Footer />
           </div>
         } />
         
@@ -31,3 +33,5 @@ function App() {
 }
 
 export default App;
+
+
