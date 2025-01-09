@@ -9,9 +9,6 @@ function App() {
         {/* Route for Hero */}
         <Route path="/" element={<Hero />} />
 
-        {/* Route for Error */}
-        <Route path="/Error" element={<NotFound />} />
-
         {/* Fallback Route for 404 */}
         <Route path="*" element={<NotFound />} />
       </Routes>
