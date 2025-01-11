@@ -1,32 +1,33 @@
 import React from 'react';
 import Navbar from './components/navbar/Navbar.jsx';
 import Footer from './components/Footer';
-import Sponsors from "./components/sponsors/Sponsors";
-import LiveEventComponent from './components/events'; 
-import TestimonialSection from "./components/Testimonials/TestimonialSection";
-import Hero from "./components/Hero/Hero"
 import NotFound from "./components/NotFound/notFound";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import About from './components/About/about.jsx';
+import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
+import Home from './pages/home/home.jsx';
+const Layout = () => {
+  return (
+    <div>
+      <Navbar />
+      <Outlet />
+      {/* <Footer /> */}
+    </div>
+  )
+}
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={
-          <div>
-            <Navbar />
-            <Hero />
-            <About />
-            <Sponsors />
-            <LiveEventComponent />
-            <TestimonialSection />
-            <Footer />
-          </div>
-        } />
-        
-        {/* Fallback Route for 404 */}
-        <Route path="*" element={<NotFound />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={
+            <Home />
+          }/>
+          <Route path="/team" element={
+            <NotFound />
+          }/>
+
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </Router>
   );
