@@ -1,0 +1,68 @@
+.about-page {
+  background: black;
+  color: white;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content:center;
+  align-content: center;
+  padding-bottom: 3rem;
+  font-weight: 700;
+  size: 65px;
+}
+
+.header-title {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: Chakra Petch;
+}
+
+.founder-section {
+  background: linear-gradient(90deg,#233323, #013C01);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #000000, #999999);
+  border-image-slice: 1;
+}
+
+.card-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.info-card {
+  background: linear-gradient(90deg,#233323, #013C01);
+  color: white;
+  padding: 2rem;
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #000000, #999999);
+  border-image-slice: 1;
+  width: 45%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .header {
+    font-size: 50px;
+    padding-bottom: 2rem;
+  }
+
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .card-section {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .info-card {
+    width: 90%;
+  }
+}

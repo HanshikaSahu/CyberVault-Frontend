@@ -1,71 +1,124 @@
-@import url('https://fonts.cdnfonts.com/css/airnt');
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap');
-
-body {
-    font-family: 'Chakra Petch', sans-serif;
-    margin: 0; /* Removes default margin */
-    background-color: #000; /* Optional: Set a background color */
-    color: #fff; /* Optional: Set a text color for better contrast */
-}
-
-h1 {
-    font-size: 3.5rem;
-    font-family: 'Airnt', 'Chakra Petch', sans-serif;
-    text-align: center; /* Ensures text is centered inside the h1 */
-}
-
-p {
-    color: #00fd04;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center; /* Ensures text is centered inside the p */
-    padding-bottom: 60px;
-}
-
-.aboutBox {
-    border-radius: 67px;
-    background-color: #00B508;
-    max-width: 75%;
-    margin: 3rem auto;
-    font-size: 1.875rem;
-    padding: 3rem; 
-    text-transform: capitalize;
-    font-weight: bold;
+.about-page {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, black, #004d00);
+    color: white;
+    padding: 2rem;
+  }
+  
+  .header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    padding-bottom: 2rem;
+  }
+  
+  .header-title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .nav-bar {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #66ff66;
+  }
+  
+  .founder-section {
+    background: #006600;
+    border-radius: 1rem;
+    padding: 2rem;
     text-align: center;
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 3rem;
-    }
-
-    p {
-        font-size: 1.5rem;
-    }
-
-    .aboutBox {
-        padding: 2rem;
-        font-size: 1.5rem;
-        border-radius: 50px;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 0.95rem;
-    }
-
-    p {
-        font-size: 0.9rem;
-    }
-
-    .aboutBox {
-        padding: 1.5rem;
-        font-size: 1rem;
-        border-radius: 30px;
-        margin: 0.9rem 1.3rem;
-    }
-}
+    margin-bottom: 2rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .founder-image {
+    border-radius: 1rem;
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  .founder-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+  
+  .founder-description {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .card-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .info-card {
+    background: #333;
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    flex: 1;
+    max-width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .card-content {
+    font-size: 1rem;
+  }
+  
+  .footer {
+    background: black;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .email-input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 16rem;
+    border: none;
+  }
+  
+  .submit-button {
+    padding: 0.5rem 1rem;
+    background: #00cc00;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background: #009900;
+  }
+  
