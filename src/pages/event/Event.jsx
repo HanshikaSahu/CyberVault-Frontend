@@ -1,6 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './Event.module.scss';
 
+import speaker1 from '../../assets/images/speaker1.svg';
+import speaker2 from '../../assets/images/speaker2.svg';
+import poster from '../../assets/images/cyberexposed.svg';
+
+import sponsorImages from "../../data/test/sponsorImages.js";
+ 
 import event1 from '../../assets/images/Event5.svg';
 import event2 from '../../assets/images/Event4.svg';
 import event3 from '../../assets/images/Event1.svg';
@@ -101,6 +107,60 @@ const Event = () => {
   };
 
   return (
+    <>
+    <div className={styles.eventPageContainer}> 
+      <div className={styles.eventGlowWrapper}>
+        <section className={styles.cyberEvent}>
+
+          <div className={styles.leftSection}>
+            <span className={styles.liveTag}>LIVE</span>
+            <h1>SECURE THE FUTURE.<br />DEFEND TODAY.</h1>
+            <p>
+              Join us for an action-packed deep dive into the world of cybersecurity.
+              Whether you're an industry professional or just starting your journey,
+              this event will equip you with the tools and knowledge to safeguard digital
+              spaces. Expect insightful talks, hands-on workshops, and expert panels focused
+              on the latest trends, threats, and solutions shaping the cybersecurity landscape.
+            </p>
+
+            <div className={styles.details}>
+              <p className={styles.date}>27TH OCT ’24</p>
+              <p className={styles.time}>10:00 AM</p>
+              <p className={styles.venue}>CAMPUS-17 AUDITORIUM</p>
+            </div>
+
+            <button className={styles.registerButton}>
+              Register
+            </button>
+
+            <div className={styles.speakers}>
+              <h3>SPEAKERS</h3>
+              <div className={styles.speakerImages}>
+                <img src={speaker1} alt="Speaker 1" />
+                <img src={speaker2} alt="Speaker 2" />
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.rightSection}>
+            <img src={poster} alt="Cybervault Poster" className={styles.poster} />
+          </div>
+        </section>
+
+        <div className={styles["sponsor-images"]}>
+          {sponsorImages.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Sponsor ${index + 1}`}
+              className={styles["sponsor-image"]}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+
+
     <section className={styles.eventSection}>
       <div className={styles.carousel}>
         {events.map((img, index) => (
@@ -118,25 +178,32 @@ const Event = () => {
               key={index}
               className={`${styles.dot} ${index === activeIndex ? styles.active : ''}`}
               style={{ opacity: index === activeIndex ? 1 : 0.4 }}
-              onClick={() => setActiveIndex(index)}
-            />
+              onClick={() => setActiveIndex(index)} />
+          ))}
+            </div>
+        </div>
+
+        <button className={styles.exploreButton}>
+          <span>Explore</span>
+        </button>
+
+        <div className={styles.feedbackSection} ref={feedbackContainerRef}>
+          {displayedFeedbacks.map((feedback, index) => (
+            <div key={index} className={styles.feedbackCard}>
+              <h3 className={styles.feedbackName}>{feedback.name}</h3>
+              <p className={styles.feedbackComment}>{feedback.comment}</p>
+            </div>
           ))}
         </div>
-      </div>
-
-      <button className={styles.exploreButton}>
-        <span>Explore</span>
-      </button>
-
-      <div className={styles.feedbackSection} ref={feedbackContainerRef}>
-        {displayedFeedbacks.map((feedback, index) => (
-          <div key={index} className={styles.feedbackCard}>
-            <h3 className={styles.feedbackName}>{feedback.name}</h3>
-            <p className={styles.feedbackComment}>{feedback.comment}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+      </section>
+      
+      <section>
+        <div className={styles.followBanner}>
+          <h2>FOLLOW FOR MORE</h2>
+          <button className={styles.followButton}>FOLLOW</button>
+        </div>
+      </section>
+    </>
   );
 };
 
